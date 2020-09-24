@@ -3,15 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Rails dependancies and support
 ruby '2.6.3' # A Nice Programming Language.  Very cozy.
-gem 'rails', '~> 6.0.3', '>= 6.0.3.3' # This here monolith.
 gem 'jbuilder', '~> 2.7' # DSL for declaring JSON objects.
+gem 'rails', '~> 6.0.3', '>= 6.0.3.3' # This here monolith.
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby] # Timezone support for Windows users.
 
 # Database and DB support
-gem 'pg', '>= 0.18', '< 2.0' # Postgres DB.
-gem 'seedbank' # Allows for organization and runtime options for seeds.
 gem 'activerecord-import' # Provides methods for bulk import of AR objects.
 gem 'faker' # Randomized data for seeds and tests.
+gem 'pg', '>= 0.18', '< 2.0' # Postgres DB.
+gem 'seedbank' # Allows for organization and runtime options for seeds.
 
 # Servers
 gem 'puma', '~> 4.1'
@@ -22,10 +22,10 @@ gem 'turbolinks', '~> 5' # Makes server-side rendered SPA's kinda possible.
 gem 'webpacker', '~> 5.0' # Rails wrapper for Webpack.
 
 # Front End Frameworks, Libraries, and Visualization Tools
-gem 'react-rails' # Integrate React into rails for component management
 gem 'chartkick' # Create charts through API calls
-gem 'groupdate' # Easily organize by date for charts
 gem 'flutie' # Magically creates divs around each view for CSS organization
+gem 'groupdate' # Easily organize by date for charts
+gem 'react-rails' # Integrate React into rails for component management
 
 # User authorization
 gem 'devise' # Creates user authentication
@@ -36,8 +36,8 @@ group :development, :test do
   gem 'rspec-rails' # Testing framework. Replaces MiniTest.
 
   # Debugging
-  gem 'pry-rails' # Beautiful debugging.
   gem 'pry-inline' # Inline debugging support.
+  gem 'pry-rails' # Beautiful debugging.
 
   # IDE integration
   gem 'solargraph' # Allows IDE users to have live linting and documentation.
