@@ -44,7 +44,11 @@ group :development, :test do
 end
 
 group :development do
+  # Debugging
   gem 'web-console', '>= 3.3.0' # Access an interactive console on exception pages or by calling 'console.'
+
+  # Documentation
+  gem 'annotate'
 
   # Server and Module reloading for developers
   gem 'foreman' # Runs multiple server processes as determined by Procfile.dev.  Allows for HMR.

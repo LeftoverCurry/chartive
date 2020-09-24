@@ -60,6 +60,9 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.1.1)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.1)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -297,6 +300,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-import
+  annotate
   bootsnap (>= 1.4.2)
   capybara (>= 2.15)
   chartkick
