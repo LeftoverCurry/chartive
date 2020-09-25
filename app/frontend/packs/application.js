@@ -2,7 +2,9 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import "./application.scss";
 require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
@@ -12,9 +14,28 @@ require("channels");
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+const images = require.context("../images", true);
+const imagePath = (name) => images(name, true);
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
+
+import Button from "react-bootstrap/Button";
+
+const Hello = (props) => <Button variant="primary">Hello {props.name}!</Button>;
+
+Hello.defaultProps = {
+  name: "David",
+};
+
+Hello.propTypes = {
+  name: PropTypes.string,
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  ReactDOM.render(
+    <Hello name="React" />,
+    document.body.appendChild(document.createElement("div"))
+  );
+});
