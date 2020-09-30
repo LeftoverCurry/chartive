@@ -101,6 +101,9 @@ GEM
     execjs (2.7.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     faker (2.13.0)
       i18n (>= 1.6, < 2)
     ffi (1.13.1)
@@ -305,7 +308,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chartkick
   devise
-  factory_bot
+  factory_bot_rails
   faker
   flutie
   foreman

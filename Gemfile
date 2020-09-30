@@ -32,7 +32,7 @@ gem 'devise' # Creates user authentication
 
 group :development, :test do
   # Testing and support
-  gem 'factory_bot' # Allows reusable factories to be created to test models.
+  gem 'factory_bot_rails' # Allows reusable factories to be created to test models.
   gem 'rspec-rails' # Testing framework. Replaces MiniTest.
 
   # Debugging
