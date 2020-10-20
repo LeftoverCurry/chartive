@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.integer :systolic
       t.integer :diastolic
       t.integer :mood
-      t.belongs_to :users, null: false, foreign_key: true
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end
