@@ -1,2 +1,3 @@
 reload: ./bin/webpack-dev-server
 server: bundle exec rails server -p 3000
+web: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
