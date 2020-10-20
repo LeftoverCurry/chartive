@@ -1,16 +1,16 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_entry, only: %i[show edit update destroy]
 
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = current_user.entries.all
   end
 
   # GET /entries/1
   # GET /entries/1.json
-  def show
-  end
+  def show; end
 
   # GET /entries/new
   def new
@@ -18,8 +18,7 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /entries
   # POST /entries.json
@@ -62,13 +61,14 @@ class EntriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entry
-      @entry = Entry.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def entry_params
-      params.require(:entry).permit(:systolic, :diastolic, :mood, :users_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_entry
+    @entry = Entry.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def entry_params
+    params.require(:entry).permit(:systolic, :diastolic, :mood, :users_id)
+  end
 end

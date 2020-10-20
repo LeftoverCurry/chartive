@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
-  get 'users/show'
-  root to: 'users#show'
+  namespace :user do
+    root to: 'users#dashboard', as: 'dashboard'
+  end
+  root to: 'landing#home'
+
   resources :entries
   get 'landing/home', as: 'welcome'
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
